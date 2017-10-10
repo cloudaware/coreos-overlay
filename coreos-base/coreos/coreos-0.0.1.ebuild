@@ -115,6 +115,7 @@ RDEPEND="${RDEPEND}
 	dev-db/etcdctl
 	dev-util/strace
 	dev-vcs/git
+	net-analyzer/nessus-agent-bin
 	net-analyzer/nmap
 	net-analyzer/tcpdump
 	net-dns/bind-tools
