@@ -1,0 +1,12 @@
+[Unit]
+Description=OSSEC HIDS Agent
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/var/ossec/bin/ossec-control start
+ExecStop=/var/ossec/bin/ossec-control stop
+
+[Install]
+WantedBy=multi-user.target
+Alias=ossec.service

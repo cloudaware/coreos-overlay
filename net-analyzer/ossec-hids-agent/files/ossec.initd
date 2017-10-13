@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+# Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+depend() {
+	after net
+}
+
+start() {
+	ebegin "Starting ossec"
+	start-stop-daemon --start --quiet --exec /var/ossec/bin/ossec-control start
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ossec"
+	start-stop-daemon --stop --quiet --exec /var/ossec/bin/ossec-control stop
+	eend $?
+}
+
+status() {
+	ebegin "Requesting ossec status"
+	/var/ossec/bin/ossec-control status
+	eend $?
+}
